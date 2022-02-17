@@ -40,3 +40,24 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   // console.log(balance)
   balance.innerText = remaining;
 })
+
+// handle save btn event handler
+document.getElementById('save-btn').addEventListener('click', function () {
+
+  const remainingAfterExpense = parseFloat(document.getElementById('balance').innerText);
+
+  const saveInput = document.getElementById('save-input');
+  const savingsText = saveInput.value;
+  const savingsPercent = parseFloat(savingsText);
+
+
+  const savingAmount = document.getElementById('saving-amount');
+
+  const savingsCalculation = (remainingAfterExpense * savingsPercent) / 100;
+  savingAmount.innerText = savingsCalculation;
+
+  const remainingBalance = document.getElementById('remaining-balance')
+
+  const remainingAfterSavings = remainingAfterExpense - savingsCalculation;
+  remainingBalance.innerText = remainingAfterSavings;
+})
