@@ -43,21 +43,21 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 // handle save btn event handler
 document.getElementById('save-btn').addEventListener('click', function () {
-
+  // get remaining balance after expense
   const remainingAfterExpense = parseFloat(document.getElementById('balance').innerText);
-
+  // get saving input and value and convet to floating number
   const saveInput = document.getElementById('save-input');
   const savingsText = saveInput.value;
   const savingsPercent = parseFloat(savingsText);
 
-
+  // get saving amount
   const savingAmount = document.getElementById('saving-amount');
-
+  // savings calculation 
   const savingsCalculation = (remainingAfterExpense * savingsPercent) / 100;
   savingAmount.innerText = savingsCalculation;
-
+  //get remaining amount
   const remainingBalance = document.getElementById('remaining-balance')
-
+  // remaining balance calculation 
   const remainingAfterSavings = remainingAfterExpense - savingsCalculation;
   remainingBalance.innerText = remainingAfterSavings;
 })
