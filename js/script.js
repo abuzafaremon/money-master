@@ -39,16 +39,16 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
   // get cloth cost 
   const costForCloth = costInputAmount('cloth');
+  // console.log(costForCloth);
   // error handling
   if (isNaN(costForCloth) || costForCloth < 0) {
     alert('Please enter a positive Number for cloth cost');
   };
-  // console.log(costForCloth);
 
   // calculate total cost 
   const totalCost = costForFood + costForRent + costForCloth;
 
-  // error handling
+  // error handling ---
   // if (totalCost > income) {
   //   alert('Insuficient Income Balance for Expense');
   // };
